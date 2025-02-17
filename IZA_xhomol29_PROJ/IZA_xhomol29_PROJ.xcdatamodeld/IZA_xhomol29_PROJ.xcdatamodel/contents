@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES" codeGenerationType="class">
+        <attribute name="dateChange" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fuel" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="spz" optional="YES" attributeType="String"/>
+        <attribute name="yearManufacture" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="vozidloCesta" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trip" inverseName="cestaVozidla" inverseEntity="Trip"/>
+    </entity>
+    <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="from" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="kmsAfter" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="kmsBefore" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="puropse" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="to" optional="YES" attributeType="String"/>
+        <attribute name="twoWay" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <relationship name="cestaVozidla" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="vozidloCesta" inverseEntity="Car"/>
+    </entity>
+</model>
